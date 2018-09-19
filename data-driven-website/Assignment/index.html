@@ -1,0 +1,54 @@
+<!-- This is a first example of using a template -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<!-- include our libraries and css files -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="js/jquery-2.1.4.min.js"></script>
+<script src="js/handlebars-v3.0.3.js"></script>
+
+<script src="js/bootstrap.min.js"></script>
+<script src="AnimalsData.js"></script>
+<script src="assignment.js"></script>
+
+<link href="css/bootstrap.css" rel="stylesheet">
+<link href="assignment.css" rel="stylesheet">
+
+</head>
+
+<body class="container">
+<div class="table">
+    <script id="output-template" type="text/x-handlebars-template">
+        <table class="table table-bordered">
+            <thead class="thead-dark">
+                <tr>
+                        <th scope="col">Category</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Image 1</th>
+                        <th scope="col">Image 2</th>
+                        <th scope="col">Description</th>
+                </tr>
+            </thead>
+            <tbody>
+            {{#each category as |item|}}
+                <tr>
+                    {{#each animals as |animal|}}
+                        <tr>
+                            <td>{{item.name}}</td>
+                            <td>{{animal.name}}</td>
+                            <td><img src="{{image1}}" alt="" width="100px" height="100px"></td>
+                            <td><img src="{{image2}}" alt="" width="100px" height="100px"></td>
+                            <td>{{description}}</td>
+                        </tr>
+                    {{/each}}
+                </tr>
+            {{/each}}
+            </tbody>
+        </table>
+    </script>
+    <div class="content"></div>
+</div>
+
+</body>
+</html>
